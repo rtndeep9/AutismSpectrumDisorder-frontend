@@ -19,4 +19,9 @@ export class ApiService {
    get(url:string):Observable<any> {
     return this.http.get<any>(`${API}${url}`,httpOptions)
    }
+
+   post(url:string,payload:any):Observable<any>{
+     return this.http.post<any>(`${API}${url}`,payload,httpOptions)
+   }
+
 }

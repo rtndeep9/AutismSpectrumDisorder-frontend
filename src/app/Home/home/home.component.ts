@@ -11,6 +11,15 @@ export class HomeComponent implements OnInit {
   constructor(private api:ApiService) { }
 
   ngOnInit(): void {
+    this.greeting()
+  }
+
+  greeting(){
+    this.api.get("/hello").subscribe(
+      next => {
+        this.greet = next
+      }
+    )
   }
 
 }

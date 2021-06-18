@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-const API = 'http://localhost:5000/api';
+const API = 'http://localhost:5000';
 const httpOptions = {
   headers: new HttpHeaders({'Content-Type': 'application/json'}),
 };
@@ -17,6 +17,6 @@ export class ApiService {
    }
   
    get(url:string):Observable<any> {
-    return this.http.get<any>(`${API}/${url}`,httpOptions)
+    return this.http.get<any>(`${API}${url}`,httpOptions)
    }
 }

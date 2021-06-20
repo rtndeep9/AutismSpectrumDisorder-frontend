@@ -9,30 +9,9 @@ import { ApiService } from 'src/app/services/api.service';
   styleUrls: ['./questions.component.scss']
 })
 export class QuestionsComponent implements OnInit {
+  payload:any
 
   @ViewChild('carousel') carousel:any;
-
-  questions = [
-    {id:1,
-    question:"Does your child look at you when you call his/her name?",
-    options:[["Always","-1"],["Usually","-2"],["Sometimes","-3"],["Rarely","1"],["Never","2"]],
-    qname:"q1",
-    isRadio:true
-  },{id:2,
-    question:"How easy is it for you to get eye contact with your child?",
-    options:[["Very Easy","-1"],["Quite Easy","-2"],["Difficult","-3"],["Very Difficult","1"],["Impossible","2"]],    
-    qname:"q2",
-    isRadio:true
-  },
-  {id:3,
-    question:" Does your child point to indicate that s/he wants something? (e.g. a toy that is out of reach)",
-    options:[["Many Times A Day","-1"],["A Few Times A Day","-2"],["A Few Times A Week","-3"],["Less Than Once A Week","1"],["Never","2"]],
-    qname:"q3",
-    isRadio:true
-  }
-  ]
-
-
 
   questionsForm:FormGroup;
   constructor(private fb:FormBuilder,private api:ApiService,private router:Router) {
@@ -61,8 +40,14 @@ export class QuestionsComponent implements OnInit {
   async onSubmit() {
     try{
       console.log(this.questionsForm.value)
-      // this.api.post("/predict",this.questionsForm.value);
-      // this.router.navigate(["../result"]);
+      this.payload = this.questionsForm.value
+      this.api.post("/predict",this.payload).subscribe(
+        next => {
+          console.log(next)
+          this.router.navigate(["/result"])
+        }
+      )
+      // this..routernavigate(["../result"]);
 
     }catch(err){
       console.log(err)

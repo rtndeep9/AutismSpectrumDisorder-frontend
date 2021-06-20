@@ -1,5 +1,6 @@
 <div class="container">
     <form [formGroup]="questionsForm" (ngSubmit)="onSubmit()">
+
         <mdb-carousel #carousel [controls]="false" [interval]='0' [wrap]="false" [dark]="true">
             <mdb-carousel-item>
                 <div class="container">
@@ -298,10 +299,10 @@
                             <h5 class="card-title"> Gender of the child?</h5>
                             <ul class="list-group">
                                 <li class="list-group-item">
-                                    <input class="form-check-input me-1" formControlName="gender" type="radio" value="-1"> Male
+                                    <input class="form-check-input me-1" formControlName="gender" type="radio" value="1"> Male
                                 </li>
                                 <li class="list-group-item">
-                                    <input class="form-check-input me-1" formControlName="gender" type="radio" value="-2"> Female
+                                    <input class="form-check-input me-1" formControlName="gender" type="radio" value="0"> Female
                                 </li>
                             </ul>
                         </div>
@@ -336,7 +337,7 @@
                                     <input class="form-check-input me-1" formControlName="jaundice" type="radio" value="1"> Yes
                                 </li>
                                 <li class="list-group-item">
-                                    <input class="form-check-input me-1" formControlName="jaundice" type="radio" value="-2"> No
+                                    <input class="form-check-input me-1" formControlName="jaundice" type="radio" value="0"> No
                                 </li>
                             </ul>
                         </div>
@@ -357,7 +358,7 @@
                                     <input class="form-check-input me-1" formControlName="family" type="radio" value="1"> Yes
                                 </li>
                                 <li class="list-group-item">
-                                    <input class="form-check-input me-1" formControlName="family" type="radio" value="-2"> No
+                                    <input class="form-check-input me-1" formControlName="family" type="radio" value="0"> No
                                 </li>
                             </ul>
                         </div>
@@ -374,13 +375,13 @@
                             <h5 class="card-title"> Who completed this test for the child?</h5>
                             <ul class="list-group">
                                 <li class="list-group-item">
-                                    <input class="form-check-input me-1" formControlName="who" type="radio" value="-1"> Family Member
+                                    <input class="form-check-input me-1" formControlName="who" type="radio" value="1"> Family Member
                                 </li>
                                 <li class="list-group-item">
-                                    <input class="form-check-input me-1" formControlName="who" type="radio" value="-2"> Healthcare Professional
+                                    <input class="form-check-input me-1" formControlName="who" type="radio" value="2"> Healthcare Professional
                                 </li>
                                 <li class="list-group-item">
-                                    <input class="form-check-input me-1" formControlName="who" type="radio" value="-3"> Others
+                                    <input class="form-check-input me-1" formControlName="who" type="radio" value="1"> Others
                                 </li>
                             </ul>
                         </div>
@@ -392,7 +393,9 @@
 
         <div class="container mt-3">
             <button type="button" class="btn btn-danger me-3" (click)="prev()">Prev</button>
-            <button type="button" class="btn btn-warning" (click)="next()">Next</button></div>
+            <button type="button" class="btn btn-warning" (click)="next()">Next</button>
+        </div>
+
         <div class="d-flex justify-content-center">
             <button type="submit" [disabled]="!questionsForm.valid" class="btn btn-primary mt-3 mb-5">Submit</button>
         </div>

@@ -10,9 +10,9 @@ const routes: Routes = [
   component:HomeComponent,
   children:[
     {path:"login",component:LoginComponent},
-    {path:"register",component:RegisterComponent},
-    {path:"questions",component:QuestionsComponent}
-]}
+    {path:"register",component:RegisterComponent}
+]},
+{path:"questions",component:QuestionsComponent}
 ];
 
 @NgModule({

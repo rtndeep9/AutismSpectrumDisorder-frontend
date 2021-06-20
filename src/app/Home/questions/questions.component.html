@@ -1,1 +1,400 @@
-<p>questions works!</p>
+<div class="container">
+    <form [formGroup]="questionsForm" (ngSubmit)="onSubmit()">
+        <mdb-carousel #carousel [controls]="false" [interval]='0' [wrap]="false" [dark]="true">
+            <mdb-carousel-item>
+                <div class="container">
+                    <div class="card mt-5">
+                        <h5 class="card-header">1</h5>
+                        <div class="card-body">
+                            <h5 class="card-title "> Does your child look at you when you call his/her name?</h5>
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    <input class="form-check-input me-1" formControlName="q1" type="radio" value="-1"> Always
+                                </li>
+                                <li class="list-group-item">
+                                    <input class="form-check-input me-1" formControlName="q1" type="radio" value="-2"> Usually
+                                </li>
+                                <li class="list-group-item">
+                                    <input class="form-check-input me-1" formControlName="q1" type="radio" value="-3"> Sometimes
+                                </li>
+                                <li class="list-group-item">
+                                    <input class="form-check-input me-1" formControlName="q1" type="radio" value="1"> Rarely
+                                </li>
+                                <li class="list-group-item">
+                                    <input class="form-check-input me-1" formControlName="q1" type="radio" value="2"> Never
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </mdb-carousel-item>
+
+            <mdb-carousel-item>
+                <div class="container">
+                    <div class="card mt-5">
+                        <h5 class="card-header">2</h5>
+                        <div class="card-body">
+                            <h5 class="card-title"> How easy is it for you to get eye contact with your child?</h5>
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    <input class="form-check-input me-1" formControlName="q2" type="radio" value="-1"> Very Easy
+                                </li>
+                                <li class="list-group-item">
+                                    <input class="form-check-input me-1" formControlName="q2" type="radio" value="-2"> Quite Easy
+                                </li>
+                                <li class="list-group-item">
+                                    <input class="form-check-input me-1" formControlName="q2" type="radio" value="-3">Quite Difficult
+                                </li>
+                                <li class="list-group-item">
+                                    <input class="form-check-input me-1" formControlName="q2" type="radio" value="1"> Very Difficult
+                                </li>
+                                <li class="list-group-item">
+                                    <input class="form-check-input me-1" formControlName="q2" type="radio" value="2"> Impossible
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </mdb-carousel-item>
+
+            <mdb-carousel-item>
+                <div class="container">
+
+                    <div class="card mt-5">
+                        <h5 class="card-header">3</h5>
+                        <div class="card-body">
+                            <h5 class="card-title">Does your child point to indicate that s/he wants something? (e.g. a toy that is out of reach) </h5>
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    <input class="form-check-input me-1" formControlName="q3" type="radio" value="-1">Many Times A Day
+                                </li>
+                                <li class="list-group-item">
+                                    <input class="form-check-input me-1" formControlName="q3" type="radio" value="-2">A Few Times A Day
+                                </li>
+                                <li class="list-group-item">
+                                    <input class="form-check-input me-1" formControlName="q3" type="radio" value="-3">A Few Times A Week
+                                </li>
+                                <li class="list-group-item">
+                                    <input class="form-check-input me-1" formControlName="q3" type="radio" value="1"> Less Than Once A Week
+                                </li>
+                                <li class="list-group-item">
+                                    <input class="form-check-input me-1" formControlName="q3" type="radio" value="2"> Never
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </mdb-carousel-item>
+
+            <mdb-carousel-item>
+                <div class="container">
+
+                    <div class="card mt-5">
+                        <h5 class="card-header">4</h5>
+                        <div class="card-body">
+                            <h5 class="card-title"> Does your child point to share interest with you? (e.g. pointing at an interesting sight)</h5>
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    <input class="form-check-input me-1" formControlName="q4" type="radio" value="-1">Many Times A Day
+                                </li>
+                                <li class="list-group-item">
+                                    <input class="form-check-input me-1" formControlName="q4" type="radio" value="-2">A Few Times A Day
+                                </li>
+                                <li class="list-group-item">
+                                    <input class="form-check-input me-1" formControlName="q4" type="radio" value="-3">A Few Times A Week
+                                </li>
+                                <li class="list-group-item">
+                                    <input class="form-check-input me-1" formControlName="q4" type="radio" value="1"> Less Than Once A Week
+                                </li>
+                                <li class="list-group-item">
+                                    <input class="form-check-input me-1" formControlName="q4" type="radio" value="2"> Never
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </mdb-carousel-item>
+
+            <mdb-carousel-item>
+                <div class="container">
+
+                    <div class="card mt-5">
+                        <h5 class="card-header">5</h5>
+                        <div class="card-body">
+                            <h5 class="card-title"> Does your child pretend? (e.g. care for dolls, talk on a toy phone)</h5>
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    <input class="form-check-input me-1" formControlName="q5" type="radio" value="-1">Many Times A Day
+                                </li>
+                                <li class="list-group-item">
+                                    <input class="form-check-input me-1" formControlName="q5" type="radio" value="-2">A Few Times A Day
+                                </li>
+                                <li class="list-group-item">
+                                    <input class="form-check-input me-1" formControlName="q5" type="radio" value="-3">A Few Times A Week
+                                </li>
+                                <li class="list-group-item">
+                                    <input class="form-check-input me-1" formControlName="q5" type="radio" value="1"> Less Than Once A Week
+                                </li>
+                                <li class="list-group-item">
+                                    <input class="form-check-input me-1" formControlName="q5" type="radio" value="2"> Never
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </mdb-carousel-item>
+
+            <mdb-carousel-item>
+                <div class="container">
+
+                    <div class="card mt-5">
+                        <h5 class="card-header">6</h5>
+                        <div class="card-body">
+                            <h5 class="card-title"> Does your child follow where you’re looking?</h5>
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    <input class="form-check-input me-1" formControlName="q6" type="radio" value="-1">Many Times A Day
+                                </li>
+                                <li class="list-group-item">
+                                    <input class="form-check-input me-1" formControlName="q6" type="radio" value="-2">A Few Times A Day
+                                </li>
+                                <li class="list-group-item">
+                                    <input class="form-check-input me-1" formControlName="q6" type="radio" value="-3">A Few Times A Week
+                                </li>
+                                <li class="list-group-item">
+                                    <input class="form-check-input me-1" formControlName="q6" type="radio" value="1"> Less Than Once A Week
+                                </li>
+                                <li class="list-group-item">
+                                    <input class="form-check-input me-1" formControlName="q6" type="radio" value="2"> Never
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </mdb-carousel-item>
+
+            <mdb-carousel-item>
+                <div class="container">
+
+                    <div class="card mt-5">
+                        <h5 class="card-header">7</h5>
+                        <div class="card-body">
+                            <h5 class="card-title"> If you or someone else in the family is visibly upset, does your child show signs of warning to comfort them? (e.g. stroking hair, hugging them)</h5>
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    <input class="form-check-input me-1" formControlName="q7" type="radio" value="-1"> Always
+                                </li>
+                                <li class="list-group-item">
+                                    <input class="form-check-input me-1" formControlName="q7" type="radio" value="-2"> Usually
+                                </li>
+                                <li class="list-group-item">
+                                    <input class="form-check-input me-1" formControlName="q7" type="radio" value="-3"> Sometimes
+                                </li>
+                                <li class="list-group-item">
+                                    <input class="form-check-input me-1" formControlName="q7" type="radio" value="1"> Rarely
+                                </li>
+                                <li class="list-group-item">
+                                    <input class="form-check-input me-1" formControlName="q7" type="radio" value="2"> Never
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </mdb-carousel-item>
+
+            <mdb-carousel-item>
+                <div class="container">
+
+                    <div class="card mt-5">
+                        <h5 class="card-header">8</h5>
+                        <div class="card-body">
+                            <h5 class="card-title"> Would you describe your child’s first words as:</h5>
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    <input class="form-check-input me-1" formControlName="q8" type="radio" value="-1"> Very Typical
+                                </li>
+                                <li class="list-group-item">
+                                    <input class="form-check-input me-1" formControlName="q8" type="radio" value="-2"> Quite Typical
+                                </li>
+                                <li class="list-group-item">
+                                    <input class="form-check-input me-1" formControlName="q8" type="radio" value="-3"> Slightly Unsual
+                                </li>
+                                <li class="list-group-item">
+                                    <input class="form-check-input me-1" formControlName="q8" type="radio" value="1"> Very Usual
+                                </li>
+                                <li class="list-group-item">
+                                    <input class="form-check-input me-1" formControlName="q8" type="radio" value="2"> My Child Doesnt Speak
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </mdb-carousel-item>
+
+            <mdb-carousel-item>
+                <div class="container">
+
+                    <div class="card mt-5">
+                        <h5 class="card-header">9</h5>
+                        <div class="card-body">
+                            <h5 class="card-title"> Does your child use simple gestures? (e.g. wave goodbye)</h5>
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    <input class="form-check-input me-1" formControlName="q9" type="radio" value="-1">Many Times A Day
+                                </li>
+                                <li class="list-group-item">
+                                    <input class="form-check-input me-1" formControlName="q9" type="radio" value="-2">A Few Times A Day
+                                </li>
+                                <li class="list-group-item">
+                                    <input class="form-check-input me-1" formControlName="q9" type="radio" value="-3">A Few Times A Week
+                                </li>
+                                <li class="list-group-item">
+                                    <input class="form-check-input me-1" formControlName="q9" type="radio" value="1"> Less Than Once A Week
+                                </li>
+                                <li class="list-group-item">
+                                    <input class="form-check-input me-1" formControlName="q9" type="radio" value="2"> Never
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </mdb-carousel-item>
+
+            <mdb-carousel-item>
+                <div class="container">
+
+                    <div class="card mt-5">
+                        <h5 class="card-header">10</h5>
+                        <div class="card-body">
+                            <h5 class="card-title"> Does your child stare at nothing with no apparent purpose?</h5>
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    <input class="form-check-input me-1" formControlName="q10" type="radio" value="-1">Many Times A Day
+                                </li>
+                                <li class="list-group-item">
+                                    <input class="form-check-input me-1" formControlName="q10" type="radio" value="-2">A Few Times A Day
+                                </li>
+                                <li class="list-group-item">
+                                    <input class="form-check-input me-1" formControlName="q10" type="radio" value="-3">A Few Times A Week
+                                </li>
+                                <li class="list-group-item">
+                                    <input class="form-check-input me-1" formControlName="q10" type="radio" value="1"> Less Than Once A Week
+                                </li>
+                                <li class="list-group-item">
+                                    <input class="form-check-input me-1" formControlName="q10" type="radio" value="2"> Never
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </mdb-carousel-item>
+
+            <mdb-carousel-item>
+                <div class="container">
+
+                    <div class="card mt-5">
+                        <h5 class="card-header">11</h5>
+                        <div class="card-body">
+                            <h5 class="card-title"> Gender of the child?</h5>
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    <input class="form-check-input me-1" formControlName="gender" type="radio" value="-1"> Male
+                                </li>
+                                <li class="list-group-item">
+                                    <input class="form-check-input me-1" formControlName="gender" type="radio" value="-2"> Female
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </mdb-carousel-item>
+
+            <mdb-carousel-item>
+                <div class="container">
+
+                    <div class="card mt-5" style="padding-bottom: 14%;">
+                        <h5 class="card-header">12</h5>
+                        <div class="card-body">
+                            <h5 class="card-title "> Question</h5>
+                            <label for="age"> Age: {{age.value}}</label>
+                            <mdb-range [min]="12" #age [max]="36" formControlName="age" (input)="age.value"></mdb-range>
+                        </div>
+                    </div>
+                </div>
+            </mdb-carousel-item>
+
+
+            <mdb-carousel-item>
+                <div class="container">
+
+                    <div class="card mt-5">
+                        <h5 class="card-header">13</h5>
+                        <div class="card-body">
+                            <h5 class="card-title"> Did your child ever suffer from jaundice?</h5>
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    <input class="form-check-input me-1" formControlName="jaundice" type="radio" value="1"> Yes
+                                </li>
+                                <li class="list-group-item">
+                                    <input class="form-check-input me-1" formControlName="jaundice" type="radio" value="-2"> No
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </mdb-carousel-item>
+
+
+            <mdb-carousel-item>
+                <div class="container">
+
+                    <div class="card mt-5">
+                        <h5 class="card-header">14</h5>
+                        <div class="card-body">
+                            <h5 class="card-title"> Does anyone closely related to the child suffer from autism?</h5>
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    <input class="form-check-input me-1" formControlName="family" type="radio" value="1"> Yes
+                                </li>
+                                <li class="list-group-item">
+                                    <input class="form-check-input me-1" formControlName="family" type="radio" value="-2"> No
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </mdb-carousel-item>
+
+            <mdb-carousel-item>
+                <div class="container">
+
+                    <div class="card mt-5">
+                        <h5 class="card-header">15</h5>
+                        <div class="card-body">
+                            <h5 class="card-title"> Who completed this test for the child?</h5>
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    <input class="form-check-input me-1" formControlName="who" type="radio" value="-1"> Family Member
+                                </li>
+                                <li class="list-group-item">
+                                    <input class="form-check-input me-1" formControlName="who" type="radio" value="-2"> Healthcare Professional
+                                </li>
+                                <li class="list-group-item">
+                                    <input class="form-check-input me-1" formControlName="who" type="radio" value="-3"> Others
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </mdb-carousel-item>
+
+        </mdb-carousel>
+
+        <div class="container mt-3">
+            <button type="button" class="btn btn-danger me-3" (click)="prev()">Prev</button>
+            <button type="button" class="btn btn-warning" (click)="next()">Next</button></div>
+        <div class="d-flex justify-content-center">
+            <button type="submit" [disabled]="!questionsForm.valid" class="btn btn-primary mt-3 mb-5">Submit</button>
+        </div>
+    </form>
+</div>

@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
     this.api.post("/login",this.payload).subscribe(
       next => {
         console.log(next)
-        this.router.navigate(["questions"])
+        this.router.navigate(["user"])
       },
       error => {
         console.log(error)

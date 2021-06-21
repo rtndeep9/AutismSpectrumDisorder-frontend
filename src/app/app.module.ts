@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './Home/home/home.component';
 import { LoginComponent } from './Home/login/login.component';
 import { RegisterComponent } from './Home/register/register.component';
-import { QuestionsComponent } from './Home/questions/questions.component';
+import { QuestionsComponent } from './User/questions/questions.component';
 import { MdbCarouselModule } from 'mdb-angular-ui-kit/carousel';
 import { MdbCheckboxModule } from 'mdb-angular-ui-kit/checkbox';
 import { MdbCollapseModule } from 'mdb-angular-ui-kit/collapse';
@@ -24,7 +24,9 @@ import { MdbTabsModule } from 'mdb-angular-ui-kit/tabs';
 import { MdbTooltipModule } from 'mdb-angular-ui-kit/tooltip';
 import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ResultComponent } from './Home/result/result.component';
+import { ResultComponent } from './User/result/result.component';
+import { HomecontentComponent } from './Home/homecontent/homecontent.component';
+import { UserComponent } from './User/user/user.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { ResultComponent } from './Home/result/result.component';
     LoginComponent,
     RegisterComponent,
     QuestionsComponent,
-    ResultComponent
+    ResultComponent,
+    HomecontentComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,

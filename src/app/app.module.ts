@@ -27,6 +27,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ResultComponent } from './Home/result/result.component';
 import { HomecontentComponent } from './Home/homecontent/homecontent.component';
 import { UserComponent } from './Home/user/user.component';
+import { AuthGuard } from './guard/auth.guard';
+import { AuthService } from './services/auth.service';
 
 @NgModule({
   declarations: [
@@ -60,7 +62,7 @@ import { UserComponent } from './Home/user/user.component';
     MdbValidationModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [AuthGuard,AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

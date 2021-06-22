@@ -25,12 +25,7 @@ export class QuestionsComponent implements OnInit {
       q7:['',Validators.required],
       q8:['',Validators.required],
       q9:['',Validators.required],
-      q10:['',Validators.required],
-      gender:['',Validators.required],
-      age:['0',Validators.required],
-      jaundice:['',Validators.required],
-      family:['',Validators.required],
-      who:['',Validators.required],
+      q10:['',Validators.required]
     })
    }
 
@@ -47,8 +42,6 @@ export class QuestionsComponent implements OnInit {
           this.router.navigate(["/result"])
         }
       )
-      // this..routernavigate(["../result"]);
-
     }catch(err){
       console.log(err)
     }

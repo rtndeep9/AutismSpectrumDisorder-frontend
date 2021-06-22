@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,7 @@ export class LoginComponent implements OnInit {
 
   form:any;
   payload:any;
-  constructor(private api:ApiService,private router:Router,private fb:FormBuilder) { }
+  constructor(private api:ApiService,private router:Router,private fb:FormBuilder,private auth:AuthService) { }
 
   ngOnInit(): void {
     this.form = this.fb.group({
@@ -26,6 +27,7 @@ export class LoginComponent implements OnInit {
     this.api.post("/login",this.payload).subscribe(
       next => {
         console.log(next)
+        this.auth.sendToken(this.form.value.email)
         this.router.navigate(["user"])
       },
       error => {

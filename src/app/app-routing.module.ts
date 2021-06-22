@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './guard/auth.guard';
 import { HomeComponent } from './Home/home/home.component';
 import { HomecontentComponent } from './Home/homecontent/homecontent.component';
 import { LoginComponent } from './Home/login/login.component';
-import { QuestionsComponent } from './User/questions/questions.component';
+import { QuestionsComponent } from './Home/questions/questions.component';
 import { RegisterComponent } from './Home/register/register.component';
-import { ResultComponent } from './User/result/result.component';
-import { UserComponent } from './User/user/user.component';
+import { ResultComponent } from './Home/result/result.component';
+import { UserComponent } from './Home/user/user.component';
 
 const routes: Routes = [
   {
@@ -16,16 +17,10 @@ const routes: Routes = [
       {path:"",component:HomecontentComponent},
       {path:"login",component:LoginComponent},
       {path:"register",component:RegisterComponent},
+      {path:"user",component:UserComponent,canActivate:[AuthGuard]},
+      {path:"questions",component:QuestionsComponent,canActivate:[AuthGuard]},
+      {path:"result",component:ResultComponent,canActivate:[AuthGuard]},
   ]},
-  {
-    path:"user",
-    component:UserComponent,
-    children:[
-      { path:"questions",component:QuestionsComponent},
-      { path:"result",component:ResultComponent},
-      { path: "", redirectTo: "user", pathMatch: "full" },
-    ]
-  }
 ];
 
 @NgModule({

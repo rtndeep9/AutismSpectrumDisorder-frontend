@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -8,7 +9,7 @@ import { ApiService } from 'src/app/services/api.service';
 })
 export class HomeComponent implements OnInit {
   greet:any;
-  constructor(private api:ApiService) { }
+  constructor(private api:ApiService,public auth:AuthService) { }
 
   ngOnInit(): void {
     this.greeting()

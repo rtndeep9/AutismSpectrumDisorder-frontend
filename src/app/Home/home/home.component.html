@@ -17,8 +17,9 @@
                 </nav>
 
                 <div class="text-end ">
-                    <button type="button " class="btn btn-outline-primary me-2 " routerLink="login" routerLinkActive="active">Login</button>
-                    <button type="button " class="btn btn-outline-warning " routerLink="register" routerLinkActive="active">Sign-up</button>
+                    <button *ngIf="!auth.isLoggedIn()" type="button" class="btn btn-outline-primary me-2 " routerLink="login" routerLinkActive="active">Login</button>
+                    <button *ngIf="!auth.isLoggedIn()" type="button" class="btn btn-outline-warning " routerLink="register" routerLinkActive="active">Register</button>
+                    <button *ngIf="auth.isLoggedIn()" type="button" class="btn btn-outline-danger" (click)="auth.logout()">Logout</button>
                 </div>
 
             </div>

@@ -1,19 +1,24 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
   private loggedIn = false;
-  constructor() { }
-  isLoggedIn(){
-    return this.loggedIn
+  constructor(private route:Router) { }
+  sendToken(token: string) {
+    localStorage.setItem("LoggedInUser", token)
   }
-  login(){
-    this.loggedIn = true
+  getToken() {
+    return localStorage.getItem("LoggedInUser")
   }
-  logout(){
-    this.loggedIn = false
+  isLoggedIn() {
+    return this.getToken() !== null;
+  }
+  logout() {
+    localStorage.removeItem("LoggedInUser");
+    this.route.navigate(["/"]);
   }
 
 }

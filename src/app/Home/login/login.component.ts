@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
     this.api.post("/login",this.payload).subscribe(
       next => {
         console.log(next)
-        this.auth.sendToken(this.form.value.email)
+        this.auth.sendToken(next)
         this.router.navigate(["user"])
       },
       error => {

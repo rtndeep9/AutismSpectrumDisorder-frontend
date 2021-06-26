@@ -1,5 +1,5 @@
 <form [formGroup]="detailsForm" (ngSubmit)="onSubmit()">
-    <div class="col-4">
+    <div class="form-group mb-3 col-4">
         <div class="mb-3">
             <label for="childName" class="form-label">Child’s name:</label>
             <input type="text" class="form-control" formControlName="childName" id="childName"
@@ -7,7 +7,7 @@
         </div>
     </div>
 
-    <div class="col-4">
+    <div class="form-group mb-3 col-4">
         <label class="form-label" for="gender">Child’s gender:</label>
         <div id="gender">
             <input class="me-1" formControlName="gender" type="radio" value="1"> Male
@@ -16,13 +16,13 @@
     </div>
 
 
-    <div class="col-4">
+    <div class="form-group mb-3 col-4">
         <label class="form-label"> What is the age of the child? (months)</label><br>
         <label class="form-label" for="age"> Age: {{age.value}}</label>
         <mdb-range [min]="12" #age [max]="36" formControlName="age" (input)="age.value"></mdb-range>
     </div>
 
-    <div class="col-4">
+    <div class="form-group mb-3 col-4">
         <label class="form-label" for="jaundice" class="form-label">Did your child ever suffer from jaundice?</label>
         <div id="jaundice">
             <input class="me-1" formControlName="jaundice" type="radio" value="1"> Yes
@@ -31,7 +31,7 @@
     </div>
 
 
-    <div class="col-4">
+    <div class="form-group mb-3 col-4">
         <label class="form-label" for="family" class="form-label">Does anyone closely related to the child suffer from autism?</label>
         <div id="family">
             <input class="me-1" formControlName="family" type="radio" value="1"> Yes
@@ -39,7 +39,7 @@
         </div>
     </div>
 
-    <div class="col-4">
+    <div class="form-group mb-3 col-4">
         <label class="form-label" for="who" class="form-label">Does anyone closely related to the child suffer from autism?</label>
         <div id="who">
             <input class="me-1" formControlName="who" type="radio" value="1"> Family Member

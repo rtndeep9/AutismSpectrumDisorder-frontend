@@ -13,19 +13,23 @@ export class RegisterComponent implements OnInit {
   form:any;
   payload:any;
   response:any;
+  user:any; 
   constructor(private api:ApiService,private router:Router,private fb:FormBuilder) { }
 
   ngOnInit(): void {
     this.form = this.fb.group({
-      name:["",[Validators.required]],
+      username:["",[Validators.required]],
       email:["",[Validators.required]],
       password:["",[Validators.required]],
-      checkpassword:["",[Validators.required]]
+      checkPassword:["",[Validators.required]]
     })
+
+   
   }
 
   submit(){
-    this.payload = this.form.value
+    this.payload = this.form.value;
+    
     this.api.post("/register",this.payload).subscribe(
       next => {
         console.log(next)

@@ -31,7 +31,6 @@ export class QuestionsComponent implements OnInit {
 
   ngOnInit(): void {
     this.user = localStorage.getItem('LoggedInUser')
-    this.user = JSON.parse(this.user)
   }
 
   async onSubmit() {

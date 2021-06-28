@@ -29,6 +29,11 @@ import { HomecontentComponent } from './Home/homecontent/homecontent.component';
 import { UserComponent } from './Home/user/user.component';
 import { AuthGuard } from './guard/auth.guard';
 import { AuthService } from './services/auth.service';
+import { DoctorHomeComponent } from './Doctor/doctor-home/doctor-home.component';
+import { DoctorLoginComponent } from './Doctor/doctor-login/doctor-login.component';
+import { DoctorRegisterComponent } from './Doctor/doctor-register/doctor-register.component';
+import { DoctorPatientsComponent } from './Doctor/doctor-patients/doctor-patients.component';
+import { DoctorsComponent } from './Home/doctors/doctors.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +44,12 @@ import { AuthService } from './services/auth.service';
     QuestionsComponent,
     ResultComponent,
     HomecontentComponent,
-    UserComponent
+    UserComponent,
+    DoctorHomeComponent,
+    DoctorLoginComponent,
+    DoctorRegisterComponent,
+    DoctorPatientsComponent,
+    DoctorsComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { DoctorHomeComponent } from './Doctor/doctor-home/doctor-home.component';
+import { DoctorLoginComponent } from './Doctor/doctor-login/doctor-login.component';
+import { DoctorPatientsComponent } from './Doctor/doctor-patients/doctor-patients.component';
+import { DoctorRegisterComponent } from './Doctor/doctor-register/doctor-register.component';
 import { AuthGuard } from './guard/auth.guard';
+import { DoctorsComponent } from './Home/doctors/doctors.component';
 import { HomeComponent } from './Home/home/home.component';
 import { HomecontentComponent } from './Home/homecontent/homecontent.component';
 import { LoginComponent } from './Home/login/login.component';
@@ -20,7 +25,18 @@ const routes: Routes = [
       {path:"user",component:UserComponent,canActivate:[AuthGuard]},
       {path:"questions",component:QuestionsComponent,canActivate:[AuthGuard]},
       {path:"result",component:ResultComponent,canActivate:[AuthGuard]},
+      {path:"doctors",component:DoctorsComponent,canActivate:[AuthGuard]},
   ]},
+  {
+    path:"doctor",
+    component:DoctorHomeComponent,
+    children:[
+      {path:"login",component:DoctorLoginComponent},
+      {path:"register",component:DoctorRegisterComponent},
+      {path:"patients",component:DoctorPatientsComponent},
+    ]
+  }
+
 ];
 
 @NgModule({

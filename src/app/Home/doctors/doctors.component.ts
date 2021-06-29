@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-doctors',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./doctors.component.scss']
 })
 export class DoctorsComponent implements OnInit {
+  doctors: any
+  constructor(private api: ApiService) { }
 
-  constructor() { }
-
-  ngOnInit(): void {
+  ngOnInit() {
+    this.api.get('/doctors').subscribe(next => {
+      this.doctors = next
+    })
   }
 
 }

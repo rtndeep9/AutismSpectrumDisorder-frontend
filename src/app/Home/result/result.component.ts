@@ -7,7 +7,7 @@ import { ApiService } from 'src/app/services/api.service';
   styleUrls: ['./result.component.scss']
 })
 export class ResultComponent implements OnInit {
-  result : any;
+  isASD : any;
   constructor(private api: ApiService) { }
 
   async ngOnInit() {
@@ -20,9 +20,13 @@ export class ResultComponent implements OnInit {
 
     this.api.post('/result',payload).subscribe(
       next => {
+        if(next.result == '1'){
+          this.isASD = true
+        }else{
+          this.isASD = false
+        }
         console.log(next)
       }
     )
   }
-
 }

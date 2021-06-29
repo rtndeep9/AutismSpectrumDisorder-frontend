@@ -7,22 +7,22 @@ import { ApiService } from 'src/app/services/api.service';
   styleUrls: ['./result.component.scss']
 })
 export class ResultComponent implements OnInit {
-  isASD : any;
+  isASD: any;
   constructor(private api: ApiService) { }
 
   async ngOnInit() {
-    let user:any = localStorage.getItem('LoggedInUser')
-    
+    let user: any = localStorage.getItem('LoggedInUser')
+
     console.log(user)
     let payload = {
-      "email":user
+      "email": user
     }
 
-    this.api.post('/result',payload).subscribe(
+    this.api.post('/result', payload).subscribe(
       next => {
-        if(next.result == '1'){
+        if (next.result == '1') {
           this.isASD = true
-        }else{
+        } else {
           this.isASD = false
         }
         console.log(next)

@@ -1,13 +1,19 @@
 <div *ngIf="isASD">
-    <p>Signs of Autism detected</p>
-    <p>Would you like to consult a child specialist?</p>
+    <div class="p-5 mb-4 bg-warning rounded-3">
+        <div class="container-fluid py-5">
+          <h1 class="display-5 fw-bold">Signs of Autism detected</h1>
+          <p class="col-md-8 fs-4">Would you like to consult a child specialist?.</p>
+          <button routerLink="/doctors" class="btn btn-lg btn-info">Click Me!</button>
+        </div>
+      </div>
 </div>
 
 <div *ngIf="!isASD">
-    <p>No signs of Autism detected</p>
-    <p>Would you still like to consult a child specialist?</p>
-</div>
-
-<div>
-    <button routerLink="/doctors" class="btn btn-xs btn-info">Consult</button>
+    <div class="p-5 mb-4 bg-light shadow rounded-3">
+        <div class="container-fluid py-5">
+          <h1 class="display-5 fw-bold">No signs of Autism detected.</h1>
+          <p class="col-md-8 fs-4">Would you like to consult a child specialist?.</p>
+          <button routerLink="/doctors" class="btn btn-lg btn-info">Click Me!</button>
+        </div>
+      </div>
 </div>

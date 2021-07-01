@@ -1,64 +1,69 @@
-<form [formGroup]="detailsForm" (ngSubmit)="onSubmit()">
-    <div class="form-group mb-3 col-4">
-        <div class="mb-3">
-            <label for="childName" class="form-label">Child’s name:</label>
-            <input type="text" class="form-control" formControlName="childName" id="childName"
-                placeholder="Enter name here">
+<div class="container mb-3 shadow">
+    <form [formGroup]="detailsForm" class="mt-2" (ngSubmit)="onSubmit()">
+        <div class="form-group mb-3 ">
+            <div class="mb-3">
+                <label for="childName" class="form-label">Child’s name:</label>
+                <input type="text" class="form-control" formControlName="childName" id="childName"
+                    placeholder="Enter name here">
+            </div>
         </div>
-    </div>
 
-    <div class="form-group mb-3 col-4">
-        <label class="form-label" for="gender">Child’s gender:</label>
-        <div id="gender">
-            <input class="me-1" formControlName="gender" type="radio" value="1"> Male
-            <input class="me-1" formControlName="gender" type="radio" value="0"> Female
+        <div class="form-group mb-3 ">
+            <label class="form-label" for="gender">Child’s gender:</label>
+            <div id="gender">
+                <input class="me-1" formControlName="gender" type="radio" value="1"> Male
+                <input class="me-1" formControlName="gender" type="radio" value="0"> Female
+            </div>
         </div>
-    </div>
 
 
-    <div class="form-group mb-3 col-4">
-        <label class="form-label"> What is the age of the child? (months)</label><br>
-        <label class="form-label" for="age"> Age: {{age.value}}</label>
-        <mdb-range [min]="12" #age [max]="36" formControlName="age" (input)="age.value"></mdb-range>
-    </div>
-
-    <div class="form-group mb-3 col-4">
-        <label class="form-label" for="jaundice" class="form-label">Did your child ever suffer from jaundice?</label>
-        <div id="jaundice">
-            <input class="me-1" formControlName="jaundice" type="radio" value="1"> Yes
-            <input class="me-1" formControlName="jaundice" type="radio" value="0"> No
+        <div class="form-group mb-3 ">
+            <label class="form-label"> What is the age of the child? (months)</label><br>
+            <label class="form-label" for="age"> Age: {{age.value}}</label>
+            <mdb-range [min]="12" #age [max]="36" formControlName="age" (input)="age.value"></mdb-range>
         </div>
-    </div>
 
-
-    <div class="form-group mb-3 col-4">
-        <label class="form-label" for="family" class="form-label">Does anyone closely related to the child suffer from autism?</label>
-        <div id="family">
-            <input class="me-1" formControlName="family" type="radio" value="1"> Yes
-            <input class="me-1" formControlName="family" type="radio" value="0"> No
+        <div class="form-group mb-3 ">
+            <label class="form-label" for="jaundice" class="form-label">Did your child ever suffer from
+                jaundice?</label>
+            <div id="jaundice">
+                <input class="me-1" formControlName="jaundice" type="radio" value="1"> Yes
+                <input class="me-1" formControlName="jaundice" type="radio" value="0"> No
+            </div>
         </div>
-    </div>
 
-    <div class="form-group mb-3 col-4">
-        <div class="mb-3">
-            <label for="contact" class="form-label">Contat Number:</label>
-            <input type="text" class="form-control" formControlName="contact" id="contact"
-                placeholder="Enter number here">
+
+        <div class="form-group mb-3 ">
+            <label class="form-label" for="family" class="form-label">Does anyone closely related to the child suffer
+                from autism?</label>
+            <div id="family">
+                <input class="me-1" formControlName="family" type="radio" value="1"> Yes
+                <input class="me-1" formControlName="family" type="radio" value="0"> No
+            </div>
         </div>
-    </div>
 
-
-    <div class="form-group mb-3 col-4">
-        <label class="form-label" for="who" class="form-label">Does anyone closely related to the child suffer from autism?</label>
-        <div id="who">
-            <input class="me-1" formControlName="who" type="radio" value="1"> Family Member
-            <input class="me-1" formControlName="who" type="radio" value="2"> Healthcare Professional
-            <input class="me-1" formControlName="who" type="radio" value="0"> Others
+        <div class="form-group mb-3 ">
+            <div class="mb-3">
+                <label for="contact" class="form-label">Contat Number:</label>
+                <input type="text" class="form-control" formControlName="contact" id="contact"
+                    placeholder="Enter number here">
+            </div>
         </div>
-    </div>
 
 
-    <div >
-        <button type="submit" [disabled]="!detailsForm.valid" class="btn btn-primary mt-3 mb-5">Proceed</button>
-    </div>
-</form>
+        <div class="form-group mb-3 ">
+            <label class="form-label" for="who" class="form-label">Does anyone closely related to the child suffer from
+                autism?</label>
+            <div id="who">
+                <input class="me-1" formControlName="who" type="radio" value="1"> Family Member
+                <input class="me-1" formControlName="who" type="radio" value="2"> Healthcare Professional
+                <input class="me-1" formControlName="who" type="radio" value="0"> Others
+            </div>
+        </div>
+
+
+        <div>
+            <button type="submit" [disabled]="!detailsForm.valid" class="btn btn-primary mt-3 mb-5">Proceed</button>
+        </div>
+    </form>
+</div>

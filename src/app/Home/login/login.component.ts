@@ -11,19 +11,19 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class LoginComponent implements OnInit {
 
-  form:any;
+  loginForm:any;
   payload:any;
   constructor(private api:ApiService,private router:Router,private fb:FormBuilder,private auth:AuthService) { }
 
   ngOnInit(): void {
-    this.form = this.fb.group({
+    this.loginForm = this.fb.group({
       email:["",[Validators.required]],
       password:["",[Validators.required]],
     })
   }
 
-  submit(){
-    this.payload = this.form.value
+  login(){
+    this.payload = this.loginForm.value
     this.api.post("/login",this.payload).subscribe(
       next => {
         console.log(next)

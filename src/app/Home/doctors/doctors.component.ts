@@ -9,15 +9,16 @@ import { ApiService } from 'src/app/services/api.service';
 export class DoctorsComponent implements OnInit {
   doctors: any;
   patientData:any;
+  user:any
   constructor(private api: ApiService) { }
 
   ngOnInit() {
 
-    let user: any = localStorage.getItem('LoggedInUser')
+     this.user = localStorage.getItem('LoggedInUser')
 
-    console.log(user)
+    console.log(this.user)
     let payload = {
-      "email": user
+      "email": this.user
     }
 
     this.api.post('/result', payload).subscribe(
@@ -31,6 +32,17 @@ export class DoctorsComponent implements OnInit {
 
     this.api.get("")
 
+  }
+
+  addPatient(doctorEmail:string){
+
+    const data = {
+      ...this.patientData,
+      email:doctorEmail
+    }
+
+    console.log(data)
+    // this.api.post('/addPatient',data).subscribe()
   }
 
 }

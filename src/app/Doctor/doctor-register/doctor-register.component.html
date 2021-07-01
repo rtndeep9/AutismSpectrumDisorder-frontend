@@ -1,8 +1,13 @@
 <form (ngSubmit)="submit()" [formGroup]="form">
 
-    <input formControlName="username" id="name" required type="text">
-    <input formControlName="email" id="email" required type="email">
-    <input formControlName="password" id="password" required type="password">
-    <input formControlName="checkPassword" id="password" required type="password">
+    <input formControlName="name" type="text">
+    <input formControlName="designation" type="text">
+    <input formControlName="experience" type="password">
+    <input formControlName="contact" type="password">
+    <input formControlName="email" type="email">
+    <input formControlName="password" type="password">
+    <input formControlName="checkPassword"  type="password">
+    
+
     <button [disabled]="!form.valid" type="submit">Submit</button>
 </form>

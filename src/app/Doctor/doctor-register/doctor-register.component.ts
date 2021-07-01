@@ -18,13 +18,14 @@ export class DoctorRegisterComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = this.fb.group({
-      username:["",[Validators.required]],
+      name:["",[Validators.required]],
+      designation:["",[Validators.required]],
+      experience:["",[Validators.required]],
+      contact:["",[Validators.required]],
       email:["",[Validators.required]],
       password:["",[Validators.required]],
       checkPassword:["",[Validators.required]]
-    })
-
-   
+    })  
   }
 
   submit(){

@@ -15,6 +15,7 @@ import { RegisterComponent } from './Home/register/register.component';
 import { ResultComponent } from './Home/result/result.component';
 import { UserComponent } from './Home/user/user.component';
 
+
 const routes: Routes = [
   {
     path:"",
@@ -33,9 +34,9 @@ const routes: Routes = [
     path:"doctor",
     component:DoctorHomeComponent,
     children:[
-      {path:"login",component:DoctorLoginComponent},
-      {path:"register",component:DoctorRegisterComponent},
-      {path:"patients",component:DoctorPatientsComponent},
+      {path:"doclogin",component:DoctorLoginComponent},
+      {path:"docregister",component:DoctorRegisterComponent},
+      {path:"mypatients",component:DoctorPatientsComponent},   
     ]
   }
 

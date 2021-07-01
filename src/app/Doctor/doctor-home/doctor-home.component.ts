@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DocauthService } from 'src/app/services/docauth.service';
 
 @Component({
   selector: 'app-doctor-home',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DoctorHomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(public docauth:DocauthService) { }
 
   ngOnInit(): void {
   }

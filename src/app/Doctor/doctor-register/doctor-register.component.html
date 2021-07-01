@@ -1,1 +1,8 @@
-<p>doctor-register works!</p>
+<form (ngSubmit)="submit()" [formGroup]="form">
+
+    <input formControlName="username" id="name" required type="text">
+    <input formControlName="email" id="email" required type="email">
+    <input formControlName="password" id="password" required type="password">
+    <input formControlName="checkPassword" id="password" required type="password">
+    <button [disabled]="!form.valid" type="submit">Submit</button>
+</form>

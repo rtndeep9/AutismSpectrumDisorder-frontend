@@ -11,14 +11,15 @@
                 </a>
 
                 <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
-                    <a class="me-3 py-2 text-dark text-decoration-none" routerLink="teachers" routerLinkActive="active-link">About ASD</a>
-                    <a class="me-3 py-2 text-dark text-decoration-none" routerLink="courses" routerLinkActive="active-link">Get help!</a>
-                    <a class="me-3 py-2 text-dark text-decoration-none" routerLink="batches" routerLinkActive="active-link">Contact Us</a>
+                    <a class="me-3 py-2 text-dark text-decoration-none" routerLink="about" routerLinkActive="active-link">About</a>
                 </nav>
 
+                <div>
+                    <button type="button" class="btn btn-info btn-rounded me-2" routerLink="doctor" >Are you a doctor?</button>
+                </div>
                 <div class="text-end ">
-                    <button *ngIf="!auth.isLoggedIn()" type="button" class="btn btn-primary btn-rounded me-2" routerLink="login" routerLinkActive="active">Login</button>
-                    <button *ngIf="!auth.isLoggedIn()" type="button" class="btn btn-warning btn-rounded " routerLink="register" routerLinkActive="active">Register</button>
+                    <button *ngIf="!auth.isLoggedIn()" type="button" class="btn btn-primary btn-rounded me-2" routerLink="login" >Login</button>
+                    <button *ngIf="!auth.isLoggedIn()" type="button" class="btn btn-warning btn-rounded " routerLink="register" >Register</button>
                     <button *ngIf="auth.isLoggedIn()" type="button" class="btn btn-outline-danger btn-rounded" (click)="auth.logout()">Logout</button>
                 </div>
 

@@ -5,6 +5,7 @@ import { DoctorLoginComponent } from './Doctor/doctor-login/doctor-login.compone
 import { DoctorPatientsComponent } from './Doctor/doctor-patients/doctor-patients.component';
 import { DoctorRegisterComponent } from './Doctor/doctor-register/doctor-register.component';
 import { AuthGuard } from './guard/auth.guard';
+import { AboutComponent } from './Home/about/about.component';
 import { DoctorsComponent } from './Home/doctors/doctors.component';
 import { HomeComponent } from './Home/home/home.component';
 import { HomecontentComponent } from './Home/homecontent/homecontent.component';
@@ -22,6 +23,7 @@ const routes: Routes = [
       {path:"",component:HomecontentComponent},
       {path:"login",component:LoginComponent},
       {path:"register",component:RegisterComponent},
+      {path:"about",component:AboutComponent},
       {path:"user",component:UserComponent,canActivate:[AuthGuard]},
       {path:"questions",component:QuestionsComponent,canActivate:[AuthGuard]},
       {path:"result",component:ResultComponent,canActivate:[AuthGuard]},

@@ -21,6 +21,7 @@ export class UserComponent implements OnInit {
     jaundice:['',Validators.required],
     family:['',Validators.required],
     who:['',Validators.required],
+    contact:['',Validators.required]
   })
 }
 

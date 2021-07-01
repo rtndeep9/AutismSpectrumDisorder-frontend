@@ -10,7 +10,7 @@ export class ResultComponent implements OnInit {
   isASD: any;
   constructor(private api: ApiService) { }
 
-  async ngOnInit() {
+  ngOnInit() {
     let user: any = localStorage.getItem('LoggedInUser')
 
     console.log(user)

@@ -1,5 +1,5 @@
-<div class="container shadow-2 mt-5 mb-2" style="height:55rem;padding: 2rem;">
-
+<div class="container shadow-2 mt-5 mb-2" >
+    <!-- style="height:55rem;padding: 2rem;" -->
     <div *ngIf="userAdded">
         <div class="p-2 mb-4 bg-warning rounded-3">
             <div class="container-fluid py-5">
@@ -9,29 +9,30 @@
           </div>
     </div>
 
-<div class="row row-cols-1 row-cols-md-3 g-4">
-    <div *ngFor="let doctor of doctors" class="card border border-warning shadow ms-3 me-5" style="width: 25rem;">
-        <div class="card-body">
-            <h3 class="card-title">Name: {{doctor.name}}</h3>
-            <p class="card-text mb-1">
-                <small class="text-muted">Designation: {{doctor.designation}}</small>
-            </p>
-            <span class="card-text mt-1 mb-1">
-                <small class="text-muted">Qualifications: </small>
-            </span>
-
-            <p class="card-text mt-1 mb-1">
-                <small class="text-muted">Experience: {{doctor.experience}} Years</small>
-            <p class="card-text mt-1 mb-1">
-                <small class="text-muted">Email: {{doctor.email}}</small>
-            </p>
-            <p class="card-text mt-1 mb-2">
-                <small class="text-muted">Contact:{{doctor.contact}}</small>
-            </p>
-
-            <button type="button" class="btn btn-danger float-end" (click)="addPatient(doctor.email)">Consult</button>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div *ngFor="let doctor of doctors" class="col">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h3 class="card-title">Name: {{doctor.name}}</h3>
+                    <p class="card-text mb-1">
+                        <small class="text-muted">Designation: {{doctor.designation}}</small>
+                    </p>
+                    <span class="card-text mt-1 mb-1">
+                        <small class="text-muted">Qualifications: </small>
+                    </span>
+        
+                    <p class="card-text mt-1 mb-1">
+                        <small class="text-muted">Experience: {{doctor.experience}} Years</small>
+                    <p class="card-text mt-1 mb-1">
+                        <small class="text-muted">Email: {{doctor.email}}</small>
+                    </p>
+                    <p class="card-text mt-1 mb-2">
+                        <small class="text-muted">Contact:{{doctor.contact}}</small>
+                    </p>
+        
+                    <button type="button" class="btn btn-danger float-end" (click)="addPatient(doctor.email)">Consult</button>
+                </div>
+            </div>
         </div>
     </div>
-</div>
-
 </div>

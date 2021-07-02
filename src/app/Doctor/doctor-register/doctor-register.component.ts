@@ -27,7 +27,8 @@ export class DoctorRegisterComponent implements OnInit {
       contact:["",[Validators.required]],
       email:["",[Validators.required]],
       password:["",[Validators.required]],
-      checkPassword:["",[Validators.required]]
+      checkPassword:["",[Validators.required]],
+      url:["",[Validators.required]],
     })  
   }
 

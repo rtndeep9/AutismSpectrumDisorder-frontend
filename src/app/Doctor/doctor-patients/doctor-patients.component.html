@@ -1,1 +1,16 @@
-<p>doctor-patients works!</p>
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    <div *ngFor="let patient of patients" class="col">
+        <div class="card shadow h-100">
+            <div class="card-body">
+                <h5 class="card-title">{{patient.name}}</h5>
+                <p class="card-text">{{patient.gender}}</p>
+                <p class="card-text">{{patient.age}} months</p>
+                <p class="card-text">{{patient.contact}}</p>
+                <p class="card-text">{{patient.result}}</p>
+                <button type="button" class="btn btn-danger float-end" (click)=connect(patient.pid) >Connect</button>
+            </div>
+        </div>
+    </div>
+</div>
+

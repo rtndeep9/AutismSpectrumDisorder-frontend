@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AlertService } from 'src/app/services/alert.service';
 import { ApiService } from 'src/app/services/api.service';
 
 @Component({
@@ -10,7 +12,8 @@ export class DoctorsComponent implements OnInit {
   doctors: any;
   patientData:any;
   user:any
-  constructor(private api: ApiService) { }
+  userAdded=false;
+  constructor(private api: ApiService,private alert: AlertService,private router:Router) { }
 
   ngOnInit() {
 
@@ -35,14 +38,19 @@ export class DoctorsComponent implements OnInit {
   }
 
   addPatient(doctorEmail:string){
-
     const data = {
       ...this.patientData,
       email:doctorEmail
     }
+    this.alert.success("Success")
 
     console.log(data)
-    // this.api.post('/addPatient',data).subscribe()
+    this.api.post('/addpatient',data).subscribe(next => {
+      console.log(next)
+      this.userAdded = true;
+    })
+   
+
   }
 
 }

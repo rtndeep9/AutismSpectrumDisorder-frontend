@@ -29,12 +29,14 @@ import { HomecontentComponent } from './Home/homecontent/homecontent.component';
 import { UserComponent } from './Home/user/user.component';
 import { AuthGuard } from './guard/auth.guard';
 import { AuthService } from './services/auth.service';
+import { AlertService } from './services/alert.service';
 import { DoctorHomeComponent } from './Doctor/doctor-home/doctor-home.component';
 import { DoctorLoginComponent } from './Doctor/doctor-login/doctor-login.component';
 import { DoctorRegisterComponent } from './Doctor/doctor-register/doctor-register.component';
 import { DoctorPatientsComponent } from './Doctor/doctor-patients/doctor-patients.component';
 import { DoctorsComponent } from './Home/doctors/doctors.component';
 import { AboutComponent } from './Home/about/about.component';
+import { AlertComponent } from './components/alert/alert.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +53,8 @@ import { AboutComponent } from './Home/about/about.component';
     DoctorRegisterComponent,
     DoctorPatientsComponent,
     DoctorsComponent,
-    AboutComponent
+    AboutComponent,
+    AlertComponent
   ],
   imports: [
     BrowserModule,
@@ -74,7 +77,7 @@ import { AboutComponent } from './Home/about/about.component';
     MdbValidationModule,
     BrowserAnimationsModule
   ],
-  providers: [AuthGuard,AuthService],
+  providers: [AuthGuard,AuthService,AlertService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

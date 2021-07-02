@@ -1,5 +1,16 @@
+<div class="container shadow-2 mt-5 mb-2" style="height:55rem;padding: 2rem;">
+
+    <div *ngIf="userAdded">
+        <div class="p-2 mb-4 bg-warning rounded-3">
+            <div class="container-fluid py-5">
+              <h1 class="display-5 fw-bold">Patient Data Submited</h1>
+              <p class="col-md-8 fs-4">The doctor will contact you shortly.</p>
+            </div>
+          </div>
+    </div>
+
 <div class="row row-cols-1 row-cols-md-3 g-4">
-    <div *ngFor="let doctor of doctors" class="card border border-warning shadow me-5" style="width: 25rem;">
+    <div *ngFor="let doctor of doctors" class="card border border-warning shadow ms-3 me-5" style="width: 25rem;">
         <div class="card-body">
             <h3 class="card-title">Name: {{doctor.name}}</h3>
             <p class="card-text mb-1">
@@ -21,4 +32,6 @@
             <button type="button" class="btn btn-danger float-end" (click)="addPatient(doctor.email)">Consult</button>
         </div>
     </div>
+</div>
+
 </div>

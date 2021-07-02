@@ -12,19 +12,19 @@ import { DocauthService } from 'src/app/services/docauth.service';
 })
 export class DoctorLoginComponent implements OnInit {
 
-  form:any;
+  loginForm:any;
   payload:any;
   constructor(private api:ApiService,private router:Router,private fb:FormBuilder,private docauth:DocauthService) { }
 
   ngOnInit(): void {
-    this.form = this.fb.group({
+    this.loginForm = this.fb.group({
       email:["",[Validators.required]],
       password:["",[Validators.required]],
     })
   }
 
-  submit(){
-    this.payload = this.form.value
+  login(){
+    this.payload = this.loginForm.value
     this.api.post("/doctor-login",this.payload).subscribe(
       next => {
         console.log(next)

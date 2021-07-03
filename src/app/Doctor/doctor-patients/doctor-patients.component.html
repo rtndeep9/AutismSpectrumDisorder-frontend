@@ -1,3 +1,24 @@
+<div *ngIf="loading">
+    <div class="p-2 mb-4 bg-warning rounded-3">
+        <div class="container-fluid py-5">
+            <img width="50" height="50" src="../../../assets/spinner.gif" alt="">            
+        </div>
+      </div>
+</div>
+
+<div *ngIf="success">
+    <div class="p-2 mb-4 bg-warning rounded-3">
+        <div class="container-fluid py-5">
+          <h1 class="display-5 fw-bold">SMS has been sent to the patient</h1>
+          <p class="col-md-8 fs-4">Click on the button to open google meet</p>
+          <button type="button" class="btn btn-info" (click)=goToUrl()>Meet
+            
+          </button>
+        </div>
+      </div>
+</div>
+
+
 
 <div class="row row-cols-1 row-cols-md-3 g-4">
     <div *ngFor="let patient of patients" class="col">
@@ -8,7 +29,9 @@
                 <p class="card-text">{{patient.age}} months</p>
                 <p class="card-text">{{patient.contact}}</p>
                 <p class="card-text">{{patient.result}}</p>
-                <button type="button" class="btn btn-danger float-end" (click)=connect(patient.pid) >Connect</button>
+                <button type="button" class="btn btn-danger float-end" (click)=connect(patient.pid) >                  
+                    Connect        
+                </button>
             </div>
         </div>
     </div>

@@ -8,6 +8,7 @@ import { ApiService } from 'src/app/services/api.service';
 })
 export class DoctorPatientsComponent implements OnInit {
   patients: any;
+  doctorName:any;
   user: any;
   success = false;
   url: any;
@@ -19,6 +20,13 @@ export class DoctorPatientsComponent implements OnInit {
     let payload = {
       "email": this.user
     }
+
+    this.api.post("/doctorname", payload).subscribe(next => {
+      this.doctorName = next
+    })
+
+
+
     this.api.post("/mypatients", payload).subscribe(next => {
       this.patients = next
     })

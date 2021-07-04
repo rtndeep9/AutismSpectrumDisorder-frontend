@@ -295,12 +295,12 @@
         </mdb-carousel>
 
         <div class="container mt-3">
-            <button type="button" class="btn btn-danger me-3" (click)="prev()">Prev</button>
-            <button type="button" class="btn btn-warning" (click)="next()">Next</button>
+            <button type="button" class="btn btn-danger me-3" (click)="prev()"><i class="fas fa-caret-left me-2"></i>Prev</button>
+            <button type="button" class="btn btn-warning" (click)="next()">Next<i class="fas fa-caret-right ms-2"></i></button>
         </div>
 
         <div class="d-flex justify-content-center">
-            <button type="submit" [disabled]="!questionsForm.valid" class="btn btn-primary mt-3 mb-5">Submit</button>
+            <button type="submit" [disabled]="!questionsForm.valid" class="btn btn-primary mt-3 mb-5"><i class="fas fa-paper-plane me-2"></i>Submit</button>
         </div>
     </form>
 </div>

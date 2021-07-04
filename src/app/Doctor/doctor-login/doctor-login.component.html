@@ -3,12 +3,12 @@
 
     <div class="card shadow">
         <form [formGroup]="loginForm" (ngSubmit)="login()">
-            <h1 class="h5 mb-3 fw-normal">Login</h1>
+            <h1 class="h5 mb-3 fw-normal">Doctor Login</h1>
 
             <div class="form-group mt-3">
-                <label class="form-label" for="displayName">Email</label>
+                <label class="form-label" for="floatingInput">Email address</label>
                 <input type="email" class="form-control" formControlName="email"
-                    placeholder="Enter email">
+                    placeholder="name@example.com">
             </div>
 
             <div class="form-group mt-3">

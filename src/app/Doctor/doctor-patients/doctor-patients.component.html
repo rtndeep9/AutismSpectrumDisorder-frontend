@@ -1,3 +1,12 @@
+<div>
+    <div class="p-2 mb-4  rounded-3">
+        <div class="container-fluid py-5">
+          <h1 class="display-5 fw-bold">Welcome Dr. {{doctorName}}</h1>
+          <h5 class="display-5 ">These are your patients</h5>
+        </div>
+      </div>
+</div>
+
 <div *ngIf="loading">
     <div class="p-2 mb-4 bg-warning rounded-3">
         <div class="container-fluid py-5">
@@ -11,26 +20,24 @@
         <div class="container-fluid py-5">
           <h1 class="display-5 fw-bold">SMS has been sent to the patient</h1>
           <p class="col-md-8 fs-4">Click on the button to open google meet</p>
-          <button type="button" class="btn btn-info" (click)=goToUrl()>Meet
-            
+          <button type="button" class="btn btn-success" (click)=goToUrl()>
+            <i class="fab fa-google me-2"></i> Meet 
           </button>
         </div>
       </div>
 </div>
-
-
 
 <div class="row row-cols-1 row-cols-md-3 g-4">
     <div *ngFor="let patient of patients" class="col">
         <div class="card shadow h-100">
             <div class="card-body">
                 <h5 class="card-title">{{patient.name}}</h5>
-                <p class="card-text">{{patient.gender}}</p>
+                <p class="card-text">{{patient.gender == 1 ? "Boy" : "Girl"}}</p>
                 <p class="card-text">{{patient.age}} months</p>
                 <p class="card-text">{{patient.contact}}</p>
-                <p class="card-text">{{patient.result}}</p>
-                <button type="button" class="btn btn-danger float-end" (click)=connect(patient.pid) >                  
-                    Connect        
+                <p class="card-text">{{patient.result == 1 ? "Shows signs of ASD" : "No signs of ASD deteced"}}</p>
+                <button type="button" class="btn btn-info float-end" (click)=connect(patient.pid) >                  
+                    <i class="far fa-envelope me-2"></i> Connect
                 </button>
             </div>
         </div>

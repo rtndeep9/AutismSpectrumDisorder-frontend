@@ -31,15 +31,15 @@ export class RegisterComponent implements OnInit {
     this.payload = this.registerForm.value;
     console.log(this.payload)
     
-    // this.api.post("/register",this.payload).subscribe(
-    //   next => {
-    //     console.log(next)
-    //     this.router.navigate(["login"])
-    //   },
-    //   error => {
-    //     console.log(error)
-    //   }
-    // )
+    this.api.post("/register",this.payload).subscribe(
+      next => {
+        console.log(next)
+        this.router.navigate(["login"])
+      },
+      error => {
+        console.log(error)
+      }
+    )
   }
 
 }

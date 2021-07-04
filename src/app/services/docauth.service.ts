@@ -19,7 +19,7 @@ export class DocauthService {
   }
   logout() {
     localStorage.removeItem("LoggedInDoctor");
-    this.route.navigate(["/doctor"]);
+    this.route.navigate(["/doctor/doclogin"]);
   }
 
 }

@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Tourney:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@600&display=swap');
+
+.main-content{
+  backdrop-filter: blur(3px);
+}
+
+h1 {
+  font-size: 5em;
+  font-family: 'Tourney', cursive;
+  color: rgb(255, 255, 255);
+}
+
+h3 {
+  text-align: center;
+  font-size: 3em;
+  font-family: monospace;
+}
+
+p{
+  text-align: center;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 2em;
+}
+
+@media only screen and (max-width: 600px)  {
+  h1 {
+    font-size: 3em;
+    font-family: 'Tourney', cursive;
+    color: rgb(255, 255, 255);
+  }
+  h3 {
+    text-align: center;
+    font-size: 2em;
+    font-family: monospace;
+  }
+  
+  p{
+    text-align: center;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1em;
+  }
+}
+

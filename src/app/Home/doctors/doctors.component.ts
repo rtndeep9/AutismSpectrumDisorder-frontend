@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { HotToastService } from '@ngneat/hot-toast';
 import { AlertService } from 'src/app/services/alert.service';
 import { ApiService } from 'src/app/services/api.service';
 
@@ -13,7 +14,7 @@ export class DoctorsComponent implements OnInit {
   patientData:any;
   user:any
   userAdded=false;
-  constructor(private api: ApiService,private alert: AlertService,private router:Router) { }
+  constructor(private api: ApiService,private alert: AlertService,private router:Router,private toast:HotToastService) { }
 
   ngOnInit() {
 
@@ -24,8 +25,17 @@ export class DoctorsComponent implements OnInit {
       "email": this.user
     }
 
-    this.api.post('/result', payload).subscribe(
+    this.api.post('/result', payload).pipe(
+      this.toast.observe(
+        {
+          loading:"Loading doctors..",
+          success:"Loaded",
+          error:"An error encountered"
+        }
+      )
+    ).subscribe(
       next => {
+        
         this.patientData = next
         console.log(this.patientData)})
 
@@ -45,8 +55,24 @@ export class DoctorsComponent implements OnInit {
     this.alert.success("Success")
 
     console.log(data)
-    this.api.post('/addpatient',data).subscribe(next => {
+    this.api.post('/addpatient',data).pipe(
+      this.toast.observe(
+        {
+          loading:"Consulting",
+          success:"The doctor has been notified",
+          error:"An unkown error has been encountered"
+        }
+      )
+    ).subscribe(next => {
       console.log(next)
+      this.toast.show('Please wait while the doctor reviews your result and contacts you. Thank you.',
+      {
+        autoClose: false,
+        dismissible: true,
+        position: 'bottom-center',
+        icon: '❎',
+      }
+    )
       this.userAdded = true;
     })
    

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HotToastService } from '@ngneat/hot-toast';
 import { ApiService } from 'src/app/services/api.service';
 
 @Component({
@@ -13,7 +14,7 @@ export class DoctorPatientsComponent implements OnInit {
   success = false;
   url: any;
   loading = false;
-  constructor(private api: ApiService) { }
+  constructor(private api: ApiService,private toast:HotToastService) { }
 
   ngOnInit() {
     this.user = localStorage.getItem('LoggedInDoctor')
@@ -25,9 +26,13 @@ export class DoctorPatientsComponent implements OnInit {
       this.doctorName = next
     })
 
-
-
-    this.api.post("/mypatients", payload).subscribe(next => {
+    this.api.post("/mypatients", payload).pipe(
+      this.toast.observe({
+        loading:"Loading patients",
+        success:"Successfully loaded",
+        error:"Error"
+      })
+    ).subscribe(next => {
       this.patients = next
     })
   }
@@ -39,8 +44,13 @@ export class DoctorPatientsComponent implements OnInit {
     }
     console.log(payload)
     this.loading = true;
-    this.api.post("/connect", payload).subscribe(next => {
-      this.loading = false
+    this.api.post("/connect", payload).pipe(
+      this.toast.observe({
+        loading:"Sending SMS",
+        success:"SMS Sent",
+        error:"Error Occured"
+      })
+    ).subscribe(next => {
       console.log(next)
       this.url = next
       this.success = true;

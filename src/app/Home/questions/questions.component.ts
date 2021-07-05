@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { HotToastService } from '@ngneat/hot-toast';
 import { ApiService } from 'src/app/services/api.service';
 
 @Component({
@@ -14,7 +15,7 @@ export class QuestionsComponent implements OnInit {
   @ViewChild('carousel') carousel: any;
 
   questionsForm: FormGroup;
-  constructor(private fb: FormBuilder, private api: ApiService, private router: Router) {
+  constructor(private fb: FormBuilder, private api: ApiService, private router: Router,private toast:HotToastService) {
     this.questionsForm = fb.group({
       q1: ['', Validators.required],
       q2: ['', Validators.required],
@@ -42,6 +43,7 @@ export class QuestionsComponent implements OnInit {
       this.api.post("/predict", this.payload).subscribe(
         next => {
           console.log(next)
+          this.toast.success("Submitted")
           this.router.navigate(["/result"])
         }
       )

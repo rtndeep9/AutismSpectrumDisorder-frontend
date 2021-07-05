@@ -37,6 +37,7 @@ import { DoctorPatientsComponent } from './Doctor/doctor-patients/doctor-patient
 import { DoctorsComponent } from './Home/doctors/doctors.component';
 import { AboutComponent } from './Home/about/about.component';
 import { AlertComponent } from './components/alert/alert.component';
+import { HotToastModule } from '@ngneat/hot-toast';
 
 @NgModule({
   declarations: [
@@ -75,7 +76,8 @@ import { AlertComponent } from './components/alert/alert.component';
     MdbTabsModule,
     MdbTooltipModule,
     MdbValidationModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HotToastModule.forRoot()
   ],
   providers: [AuthGuard,AuthService,AlertService],
   bootstrap: [AppComponent]

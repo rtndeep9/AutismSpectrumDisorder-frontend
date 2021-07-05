@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { HotToastService } from '@ngneat/hot-toast';
 import { ApiService } from 'src/app/services/api.service';
 import { AuthService } from 'src/app/services/auth.service';
 
@@ -13,7 +14,7 @@ export class LoginComponent implements OnInit {
 
   loginForm:any;
   payload:any;
-  constructor(private api:ApiService,private router:Router,private fb:FormBuilder,private auth:AuthService) { }
+  constructor(private api:ApiService,private router:Router,private fb:FormBuilder,private auth:AuthService,private toast:HotToastService) { }
 
   ngOnInit(): void {
     this.loginForm = this.fb.group({
@@ -28,9 +29,11 @@ export class LoginComponent implements OnInit {
       next => {
         console.log(next)
         this.auth.sendToken(next)
+        this.toast.success("Successfully Logged In")
         this.router.navigate(["user"])
       },
       error => {
+        this.toast.error(error.error)
         console.log(error)
       }
     )

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { HotToastService } from '@ngneat/hot-toast';
 import { ApiService } from 'src/app/services/api.service';
 
 @Component({
@@ -12,7 +13,7 @@ export class UserComponent implements OnInit {
 
   payload:any;
   detailsForm:FormGroup;
-  constructor(private fb:FormBuilder,private api:ApiService,private router:Router) { 
+  constructor(private fb:FormBuilder,private api:ApiService,private router:Router,private toast:HotToastService) { 
 
   this.detailsForm = fb.group({
     childName:['',Validators.required],
@@ -34,6 +35,7 @@ export class UserComponent implements OnInit {
       this.payload = this.detailsForm.value
       this.api.post("/details",this.payload).subscribe(
         next => {
+          this.toast.success("User details sent")
           console.log(next)
           this.router.navigate(["/questions"])
         }

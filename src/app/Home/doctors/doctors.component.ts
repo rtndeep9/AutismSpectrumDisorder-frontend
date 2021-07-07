@@ -25,26 +25,22 @@ export class DoctorsComponent implements OnInit {
       "email": this.user
     }
 
-    this.api.post('/result', payload).pipe(
+    this.api.post('/result', payload).subscribe(
+      next => {
+        this.patientData = next
+        console.log(this.patientData)})
+
+    this.api.get('/doctors').pipe(
       this.toast.observe(
         {
-          loading:"Loading doctors..",
+          loading:"Loading doctors",
           success:"Loaded",
           error:"An error encountered"
         }
       )
-    ).subscribe(
-      next => {
-        
-        this.patientData = next
-        console.log(this.patientData)})
-
-    this.api.get('/doctors').subscribe(next => {
+    ).subscribe(next => {
       this.doctors = next
     })
-
-    this.api.get("")
-
   }
 
   addPatient(doctorEmail:string){
